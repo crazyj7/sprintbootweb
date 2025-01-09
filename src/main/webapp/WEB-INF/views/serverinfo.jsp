@@ -236,6 +236,10 @@
         }
 
         function makeEditable(td) {
+            if ( $(td).find('input').length>0 ) {
+                // 이미 input tag 추가된 상태.
+                return ;
+            }
             const originalValue = $(td).find('span').text().trim();
             const input = $('<input type="text">').val(originalValue);
             
